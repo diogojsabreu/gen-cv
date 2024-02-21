@@ -3,7 +3,6 @@ openai
 ipykernel
 ipywidgets
 matplotlib
-azure-ai-vision
 diffusers
 transformers
 scipy
