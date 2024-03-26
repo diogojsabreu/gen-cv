@@ -13,7 +13,7 @@ logging.basicConfig(level=logging.DEBUG)
 search_endpoint = os.getenv("AZURE_SEARCH_ENDPOINT")
 search_key = os.getenv("AZURE_SEARCH_API_KEY")
 search_api_version = '2023-07-01-Preview'
-search_index_name = "eportugal1"
+search_index_name = "avatarportugal1"
  
 AOAI_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
 AOAI_key = os.getenv("AZURE_OPENAI_API_KEY")
@@ -38,8 +38,72 @@ place_orders = False
  
 functions = [
     {
+        "name": "get_bonus_points",
+        "description": "Check the amount of customer bonus / loyalty points",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "account_id": {
+                    "type": "number",
+                    "description": "Four digit account number (i.e., 1005, 2345, etc.)"
+                },
+            },
+            "required": ["account_id"],
+        }
+    },
+    {
+        "name": "get_order_details",
+        "description": "Check customer account for expected delivery date of existing orders based on the provided parameters",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "account_id": {
+                    "type": "number",
+                    "description": "Four digit account number (i.e., 1005, 2345, etc.)"
+                },
+            },
+            "required": ["account_id"],
+        }
+    },
+    {
+        "name": "order_product",
+        "description": "Order a product based on the provided parameters",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "account_id": {
+                    "type": "number",
+                    "description": "Four digit account number (i.e., 1005, 2345, etc.)"
+                },
+                "product_name": {
+                    "type": "string",
+                    "description": "Name of the product to order (i.e., Elysian Voyager, Terra Roamer, AceMaster 3000, Server & Style)"
+                },
+                "quantity": {
+                    "type": "number",
+                    "description": "Quantity of the product to order (i.e., 1, 2, etc.)"
+                }
+            },
+            "required": ["account_id", "product_name", "quantity"],
+        }
+    },
+    {
+        "name": "get_product_information",
+        "description": "Find information about a product based on a user question. Use only if the requested information if not already available in the conversation context.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "user_question": {
+                    "type": "string",
+                    "description": "User question (i.e., do you have tennis shoes for men?, etc.)"
+                },
+            },
+            "required": ["user_question"],
+        }
+    },
+    {
         "name": "get_boi_information",
-        "description": "Find information based on a user question. Use always.",
+        "description": "Find information about BOI based on a user question. Use only if the requested information if not already available in the conversation context.",
         "parameters": {
             "type": "object",
             "properties": {
@@ -97,6 +161,10 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
  
        
         available_functions = {
+            "get_bonus_points": get_bonus_points,
+            "get_order_details": get_order_details,
+            "order_product": order_product,
+            "get_product_information": get_product_information,
             "get_boi_information": get_boi_information,
         }
  
