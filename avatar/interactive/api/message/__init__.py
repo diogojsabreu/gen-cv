@@ -13,7 +13,7 @@ logging.basicConfig(level=logging.DEBUG)
 search_endpoint = os.getenv("AZURE_SEARCH_ENDPOINT")
 search_key = os.getenv("AZURE_SEARCH_API_KEY")
 search_api_version = '2023-07-01-Preview'
-search_index_name = "gnr2"
+search_index_name = "gnr3"
  
 AOAI_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
 AOAI_key = os.getenv("AZURE_OPENAI_API_KEY")
