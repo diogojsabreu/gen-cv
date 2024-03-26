@@ -1,0 +1,25 @@
+{
+    "IsEncrypted": false,
+    "Values": {
+      "AzureWebJobsStorage": "",
+      "FUNCTIONS_WORKER_RUNTIME": "python",
+      "AZURE_OPENAI_ENDPOINT": "https://openai-avatar.openai.azure.com/",
+      "AZURE_OPENAI_API_KEY": "4b89bef91ddd46c28cff7408e0e25197",
+      "AZURE_OPENAI_CHAT_DEPLOYMENT" : "avatar",
+      "AZURE_OPENAI_EMBEDDINGS_DEPLOYMENT" : "text-embedding-ada-002",
+      "AZURE_OPENAI_API_VERSION" : "2023-07-01-preview",
+      "AZURE_SEARCH_ENDPOINT": "https://cogntiviesearch-avatar.search.windows.net",
+      "AZURE_SEARCH_API_KEY": "wwWufRgHOKzv0pm7Fto7vWDly1rK8v4HKs7bwctm9MAzSeAGOBCl",
+      "AZURE_SEARCH_INDEX": "gnr2",
+      "AZURE_SPEECH_REGION": "westeurope",
+      "AZURE_SPEECH_API_KEY": "fc8871bdf8be4b7685601d02d310efcd",
+      "TEXT_ANALYTICS_ENDPOINT": "https://languageservcs-avatar.cognitiveservices.azure.com/",
+      "TEXT_ANALYTICS_KEY": "0df89128dca24dca93f5b207fa5643eb",
+      "BLOB_SAS_URL": "sp=r&st=2024-03-01T14:46:42Z&se=2024-06-08T22:46:42Z&sv=2022-11-02&sr=c&sig=xK45l1LDJi1K1Sfe5ZPLRSvR0bJxDzPVE0GRZy0CtNk%3D",
+      "SQL_DB_SERVER": "sqlserver-avatar.database.windows.net",
+      "SQL_DB_USER": "sqladmin",
+      "SQL_DB_PASSWORD": "diogo@123",
+      "SQL_DB_NAME": "sqldb-avatar",
+      "ICE_CONNECTION_STRING": "endpoint=https://azurecommunicationservices-avatar.europe.communication.azure.com/;accesskey=M6b5gE3B1MRFBarjK0WU3r2SdbjCOdyuiU38jglzW/PCgKCNSCP6DlsXSsr0CUg+Y66NSDBBs1t848ZmMuQq7g=="
+    }
+  }

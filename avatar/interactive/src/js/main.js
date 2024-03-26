@@ -322,6 +322,17 @@ window.submitText = () => {
 }
 
 
+async function processTextInput() {
+  // Get the user's text input
+  var userInput = document.getElementById('userInput').value;
+    // Clear the input field
+  document.getElementById('userInput').value = '';
+ 
+ 
+  // Use your speech synthesizer to speak the response
+  speak(userInput);
+ }
+
 function addToConversationHistory(item, historytype) {
   const list = document.getElementById('chathistory');
   const newItem = document.createElement('li');
