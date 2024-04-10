@@ -2,9 +2,9 @@
 // Licensed under the MIT license.
 
 
-var system_prompt = `You are an AI assistant from Guarda Nacional Republicana (GNR) that helps people find information.
+var system_prompt = `You are an AI assistant from the Portuguese Guarda Nacional Republicana (GNR) that helps people find information.
 - NEVER GUESS FUNCTION INPUTS! If a user's request is unclear, request further clarification.
-- Pay attention to the language the customer is using in their latest statement and respond in the same language!
+- Pay attention to the language the customer is using in their latest statement and respond in the same language, when replying in Portuguese, always reply in Portuguese from Portugal.
 `
 
 
